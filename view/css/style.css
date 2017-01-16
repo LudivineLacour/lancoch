@@ -1,0 +1,496 @@
+/*GENERALITES*/
+body#page-top, body#mentions {
+  font-size: 1.5em;
+  font-family: "Rubik", sans-serif !important;
+  color: #666666;
+  line-height: 2;
+  box-sizing: border-box; }
+
+.container {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto; }
+
+a {
+  text-decoration: none !important;
+  color: inherit; }
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0; }
+
+h2, h3, header nav {
+  font-family: 'Caveat Brush', cursive; }
+
+h2 {
+  font-weight: lighter;
+  color: #ff6666;
+  font-size: 2.2em;
+  margin: 0;
+  padding-top: 15px; }
+
+h2, header nav, h1 {
+  text-transform: uppercase; }
+
+h3 {
+  font-size: 2em;
+  color: #666666;
+  font-weight: lighter; }
+
+h2, h3, p {
+  padding-left: 2%;
+  padding-right: 2%; }
+
+p + img, p + h3 {
+  margin-top: 15px !important; }
+
+section {
+  margin: 45px 0; }
+
+hr:not(.trait_footer) {
+  width: 90px;
+  height: 4px;
+  margin: 0 0 0 2%;
+  border: 0;
+  background-color: #ff6666; }
+
+.button {
+  border: 1px solid #ffb6c1;
+  padding: 10px 2%;
+  border-radius: 30px;
+  width: 200px;
+  margin: auto; }
+
+input:focus, input:active {
+  outline: none; }
+
+/*HEADER*/
+header {
+  background-image: url("../img/bg_site_lancoch5");
+  background-size: cover;
+  -moz-background-size: cover;
+  background-position: top center;
+  margin: 0;
+  padding-bottom: 70px;
+  text-align: center; }
+  header nav {
+    /*background: rgba(102, 102, 102, 0.2);
+    -moz-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=rgba(0, 0, 0, 0.1), Direction=180, Strength=15);
+    */ }
+  header img {
+    width: 280px;
+    padding: 150px 0 0 0; }
+  header h1 {
+    color: #fff;
+    font-size: 1.5em;
+    padding-bottom: 30px;
+    -moz-text-shadow: 0px 0px 20px #656565;
+    -webkit-text-shadow: 0px 0px 20px #656565;
+    -o-text-shadow: 0px 0px 20px #656565;
+    text-shadow: 0px 0px 20px #656565;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=30); }
+  header a.button {
+    display: block;
+    color: #ffb6c1;
+    -moz-text-shadow: 0px 0px 20px #656565;
+    -webkit-text-shadow: 0px 0px 20px #656565;
+    -o-text-shadow: 0px 0px 20px #656565;
+    text-shadow: 0px 0px 20px #656565;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=30); }
+    header a.button:hover {
+      background-color: #ffb6c1;
+      color: #fff; }
+
+#menu {
+  padding: 20px;
+  transition: all 0.8s;
+  /*Logo*/ }
+  #menu a.navbar-brand img {
+    max-width: 35px !important;
+    padding-top: 0;
+    position: absolute;
+    top: 16px; }
+  #menu .fa {
+    color: #fff;
+    text-shadow: none; }
+
+#menu.navbar-default {
+  background-color: rgba(248, 248, 248, 0);
+  border-color: rgba(231, 231, 231, 0); }
+
+/*titres de nav*/
+#menu.navbar-default .navbar-nav > li > a {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.3em !important;
+  font-weight: 500;
+  padding: 5px 0;
+  border: 2px solid transparent;
+  letter-spacing: 0.5px;
+  margin: 10px 15px 0 15px; }
+
+#menu.navbar-default .navbar-nav > li > a:hover {
+  color: #ffb6c1; }
+
+.on {
+  background-color: #262626 !important;
+  padding: 0 !important;
+  padding: 10px 0 !important; }
+
+/*Titre de nav au scroll*/
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffb6c1 !important;
+  background-color: transparent; }
+
+/*menu burger*/
+.navbar-toggle {
+  border-radius: 0; }
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #ffb6c1;
+  border-color: #ffb6c1; }
+
+.navbar-default .navbar-toggle:hover > .icon-bar {
+  background-color: #FFF; }
+
+/*FOOTER*/
+footer {
+  background-color: #E6E6E6;
+  text-align: center;
+  font-size: 0.8em; }
+  footer nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0; }
+  footer .trait_footer {
+    width: 80px;
+    border-top: 0.5px solid #666666; }
+  footer p {
+    margin: 0;
+    padding: 15px 0;
+    font-size: 0.8em; }
+
+/*SECTIONS*/
+#auberge img {
+  margin: 15px 0; }
+#auberge #icone_tasse {
+  background: url("../img/tasse.svg") no-repeat;
+  padding-left: 350px;
+  background-position: left; }
+
+#meal {
+  background: url("../img/bg_fourme") no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  background-position: top center;
+  color: #fff;
+  padding: 30px 0; }
+  #meal #content_meal {
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    margin-top: 45px;
+    text-align: center; }
+    #meal #content_meal h2 {
+      color: #fff;
+      position: absolute;
+      top: -40px;
+      left: 422px; }
+    #meal #content_meal .line_left {
+      width: 330px;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: -21px; }
+    #meal #content_meal .line_right {
+      width: 330px;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 674px; }
+    #meal #content_meal #column {
+      padding-top: 30px; }
+      #meal #content_meal #column p {
+        margin: 0; }
+      #meal #content_meal #column ul {
+        padding: 15px 2% 30px 2%; }
+        #meal #content_meal #column ul li {
+          display: inline-block;
+          vertical-align: middle;
+          width: 49%; }
+          #meal #content_meal #column ul li p {
+            text-align: center;
+            font-size: 1.2em; }
+    #meal #content_meal .button {
+      background-color: #ff6666;
+      border: 0;
+      margin-bottom: 30px; }
+
+#boutique ul {
+  display: flex;
+  justify-content: center; }
+  #boutique ul li:hover img {
+    opacity: 0.8;
+    z-index: -1; }
+  #boutique ul li:hover #legend {
+    opacity: 1; }
+  #boutique ul li figure {
+    margin: 0;
+    position: relative; }
+  #boutique ul li #legend {
+    font-family: 'Caveat Brush', cursive;
+    font-size: 1.5em;
+    opacity: 0;
+    color: #fff;
+    position: absolute;
+    top: 95px;
+    left: 25px;
+    z-index: 1;
+    text-shadow: 0 0 10px black;
+    text-align: center;
+    line-height: 1; }
+
+#reservation form {
+  max-width: 600px;
+  margin: 30px auto; }
+  #reservation form ul {
+    display: inline-block; }
+    #reservation form ul:nth-child(2) {
+      margin-left: 1em; }
+    #reservation form ul li {
+      margin: 15px 0; }
+      #reservation form ul li input {
+        border: 1px solid #ff6666;
+        border-radius: 30px;
+        padding: 15px 6%;
+        width: 292px;
+        color: #666666; }
+      #reservation form ul li select {
+        border: 1px solid #ff6666;
+        border-radius: 30px;
+        padding: 15px 6%;
+        width: 292px;
+        color: #666666;
+        cursor: pointer;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        text-indent: 0.01px;
+        text-overflow: '';
+        background: url("../img/arrow") no-repeat;
+        background-size: 17px;
+        background-position: 91% 53%, right; }
+  #reservation form .button {
+    display: block;
+    background-color: #ff6666;
+    border: 0;
+    color: #fff; }
+
+#station {
+  background: url("../img/bg_station_praboure") no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  padding: 30px 0; }
+  #station #content_station {
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    position: relative;
+    margin-bottom: 40px;
+    margin-top: 45px; }
+    #station #content_station h2 {
+      color: #fff;
+      position: absolute;
+      top: -40px;
+      left: 422px; }
+    #station #content_station .line_left {
+      width: 330px;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: -21px; }
+    #station #content_station .line_right {
+      width: 330px;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 674px; }
+    #station #content_station p {
+      text-align: left;
+      padding: 0 9%;
+      clear: both; }
+    #station #content_station hr + p {
+      padding-top: 60px; }
+    #station #content_station a {
+      display: block;
+      margin-right: 10%;
+      margin-bottom: 30px;
+      border: 1px solid #fff;
+      border-radius: 20px;
+      width: 265px;
+      float: right; }
+      #station #content_station a:focus {
+        outline: none; }
+    #station #content_station div {
+      clear: both; }
+
+#raquettes img {
+  float: left;
+  margin: 30px 10% 45px 0; }
+#raquettes h3 {
+  margin-bottom: 0; }
+#raquettes h3 + p {
+  margin-top: 0; }
+
+iframe {
+  margin: 30px 0;
+  width: 100%;
+  border: 0; }
+
+#contact {
+  clear: both; }
+  #contact #adresse {
+    text-align: center;
+    color: #ff6666;
+    width: 30%;
+    margin-right: 10%; }
+    #contact #adresse p {
+      margin: 0; }
+  #contact #adresse, #contact #hours {
+    display: inline-block;
+    vertical-align: middle; }
+  #contact #hours {
+    width: 60%; }
+    #contact #hours p {
+      background-color: #ff6666;
+      color: #fff; }
+  #contact #facebook {
+    text-align: center;
+    color: #ff6666;
+    margin-top: 30px; }
+    #contact #facebook iframe {
+      width: 340px;
+      margin: auto; }
+    #contact #facebook p {
+      margin: 0; }
+
+/*MENTIONS LEGALES*/
+#mentions header {
+  background-image: none;
+  background-color: #262626; }
+#mentions h2 {
+  font-size: 1em;
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase; }
+
+/******************************************************************/
+/****************************RESPONSIVE****************************/
+/******************************************************************/
+@media screen and (max-width: 1024px) {
+  /*GENARALITES*/
+  .container {
+    max-width: 90%;
+    overflow: hidden; }
+
+  /*SECTIONS*/
+  #auberge img {
+    width: 100%; }
+  #auberge #icone_tasse {
+    background: none;
+    padding: 0; }
+
+  #meal #content_meal {
+    border: 1px solid #fff;
+    position: static; }
+    #meal #content_meal h2 {
+      position: static; }
+    #meal #content_meal .line_left {
+      position: static;
+      display: none; }
+    #meal #content_meal .line_right {
+      position: static;
+      display: none; }
+    #meal #content_meal #column ul {
+      padding-top: 0; }
+      #meal #content_meal #column ul li {
+        display: block;
+        width: 100%;
+        margin-top: 15px; }
+        #meal #content_meal #column ul li p {
+          text-align: center; }
+
+  #boutique h3 {
+    padding-top: 0 !important; }
+  #boutique ul {
+    flex-wrap: wrap; }
+
+  #station {
+    overflow: hidden; }
+    #station #content_station {
+      border: 1px solid #fff;
+      position: static; }
+      #station #content_station h2 {
+        position: static; }
+      #station #content_station .line_left {
+        position: static;
+        display: none; }
+      #station #content_station .line_right {
+        position: static;
+        display: none; }
+      #station #content_station hr + p {
+        padding-top: 30px; }
+
+  #raquettes {
+    overflow: hidden; }
+    #raquettes img {
+      float: none;
+      margin-bottom: 0; }
+    #raquettes h3 {
+      margin-top: 0;
+      padding-top: 0; }
+
+  #contact #adresse, #contact #hours {
+    display: block;
+    margin-right: auto;
+    margin-left: auto; } }
+@media screen and (max-width: 640px) {
+  .container {
+    overflow: hidden; }
+
+  #meal {
+    overflow: hidden; }
+    #meal #content_meal {
+      border: 0; }
+    #meal #column ul li {
+      display: block; }
+
+  #boutique ul {
+    flex-direction: column; }
+    #boutique ul li:nth-child(even) {
+      display: none; }
+
+  #reservation ul {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+  #station {
+    overflow: hidden; }
+    #station #content_station {
+      border: 0; } }
+
+/*# sourceMappingURL=style.css.map */
