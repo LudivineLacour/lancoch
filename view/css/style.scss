@@ -20,6 +20,14 @@ body#page-top, body#mentions{
 a{
 	text-decoration: none!important;
 	color: inherit;
+
+	&:hover{
+		color: inherit!important;
+	}
+
+	&:visited{
+		color: inherit!important;
+	}
 }
 ul{
 	list-style-type:none;
@@ -33,7 +41,7 @@ h2{
 	font-weight: lighter;
 	color: $rose;
 	font-size: 2.2em;
-	margin: 0;
+	margin: 0 0 9px 0;
 	padding-top: 15px;
 }
 h2, header nav, h1{
@@ -43,13 +51,11 @@ h3{
 	font-size: 2em;
 	color: $gris;
 	font-weight: lighter;
+	margin-bottom: 15px;
 }
 h2, h3, p{
 	padding-left: 2%;
 	padding-right: 2%;
-}
-p+img, p+h3{
-	margin-top: 15px!important;
 }
 section{
 	margin: 45px 0;
@@ -109,13 +115,14 @@ header{
 		
 		&:hover{
 			background-color: $rose_clair;
-			color: #fff;
+			color: #fff!important;
 		}
 	}
 
 	background-image: url('../img/bg_site_lancoch5');
 	background-size: cover;
 	-moz-background-size: cover;
+	-webkit-background-size: cover;
 	background-position: top center;
 	margin: 0;
 	padding-bottom: 70px;
@@ -129,10 +136,10 @@ header{
 	a.navbar-brand{
 
 		img {
-			max-width: 35px !important;
+			max-width: 150px !important;
 			padding-top: 0;
 			position: absolute;
-			top: 16px;
+			top: 25px;
 		}
 	}
 	.fa{
@@ -203,8 +210,11 @@ footer{
 }
 /*SECTIONS*/
 #auberge{
+	hr+p{
+		margin-top: 30px;
+	}
 	img{
-		margin: 15px 0;
+		margin: 30px 0;
 	}
 	#icone_tasse{
 		background: url('../img/tasse.svg') no-repeat;
@@ -252,7 +262,7 @@ footer{
 			background-color: #fff;
 			position: absolute;
 			top: 0;
-			left: 674px;
+			left: 673px;
 		}
 
 		#column{
@@ -291,6 +301,7 @@ footer{
 	ul{
 		display: flex;
 		justify-content: center;
+		margin: 30px 0;
 
 		li{
 
@@ -360,6 +371,10 @@ footer{
 				    background: url('../img/arrow') no-repeat;
 				    background-size: 17px;
 				    background-position: 91% 53%, right;
+
+				    &:focus{
+				    	outline: none;
+				    }
 				}
 			}
 			
@@ -412,7 +427,7 @@ footer{
 			background-color: #fff;
 			position: absolute;
 			top: 0;
-			left: 674px;
+			left: 673px;
 		}
 		
 		p{
@@ -437,6 +452,9 @@ footer{
 			&:focus{
 				outline:none;
 			}
+			&:hover{
+				background-color: rgba(255,255,255,0.2);
+			}
 		}
 
 		div{
@@ -450,12 +468,10 @@ footer{
 		margin: 30px 10% 45px 0;
 	}
 	h3{
-		margin-bottom: 0;
+		margin-top:30px;
 	}
-	h3+p{
-		margin-top: 0;
-	}	
 }
+
 iframe{
 		margin: 30px 0;
 		width:100%;
@@ -474,7 +490,18 @@ iframe{
 			p{
 				margin: 0;
 			}
-			
+	}
+	img{
+
+		&:hover{
+			animation: bounce 0.5s ease-in-out infinite alternate;
+			-moz-animation: bounce 0.5s ease-in-out infinite alternate;
+			-webkit-animation: bounce 0.5s ease-in-out infinite alternate;
+		}
+	}
+	@keyframes bounce{
+		from {transform: rotateZ(0deg);}
+		to {transform: rotateZ(30deg);}
 	}
 	#adresse,#hours{
 		display: inline-block;
@@ -485,6 +512,7 @@ iframe{
 		p{
 			background-color: $rose;
 			color: #fff;
+			padding : 10px 2%;
 		}
 	}
 	#facebook{
@@ -608,7 +636,7 @@ iframe{
 		
 		img{
 			float:none;
-			margin-bottom: 0;
+			margin-bottom: 30px;
 		}
 
 		h3{
@@ -623,6 +651,9 @@ iframe{
 			margin-right: auto;
 			margin-left: auto;
 		}
+		#hours{
+			margin-top: 15px;
+		}
 	}
 }
 
@@ -632,11 +663,20 @@ iframe{
 		overflow: hidden;
 	}
 
+	h2{
+		font-size: 2em;
+	}
+
+	h2, h3, p{
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 	#meal{
-		overflow: hidden;
 
 		#content_meal{
-			border: 0;
+			margin-top: 0;
+			margin-bottom: 0;
 		}
 		#column{
 			ul{
@@ -660,17 +700,52 @@ iframe{
 	}
 	
 	#reservation{
-		ul{
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
+		form{
+			ul{
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+
+				&:nth-child(2){
+					margin-left: 0;
+				}
+			}
+		}
+	}
+	
+	#station{
+		background: url('../img/bg_station_mobile') no-repeat;
+		#content_station{
+			margin-top: 0;
+			margin-bottom: 0;
+			a{
+				max-width: 80%;
+				margin-left: auto;
+			}
 		}
 	}
 
-	#station{
-		overflow: hidden;
-		#content_station{
-			border: 0;
+	#contact{
+		#adresse{
+			width: 100%;
+		}
+		#hours{
+			width: 100%;
+			p{
+				padding: 5px 5%;
+			}
+		}
+		#facebook{
+			iframe{
+				width: 85%;
+			}
+		}
+	}
+	footer{
+		nav{
+			ul{
+				flex-direction: column;
+			}
 		}
 	}
 }
