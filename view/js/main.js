@@ -1,9 +1,10 @@
+   'use strict';
 
+/////////////////////////////////////////////////////////////////////////////////////////
+// FONCTIONS                                                                           //
+/////////////////////////////////////////////////////////////////////////////////////////
 function main() {
 
-(function () {
-   'use strict';
-   
   	$('a.page-scroll').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
@@ -41,43 +42,55 @@ function main() {
       $(".navbar-collapse").collapse('hide');
     }
   });
-	
-  	// Portfolio isotope filter
-    $(window).load(function() {
-        var $container = $('.portfolio-items');
-        $container.isotope({
-            filter: '*',
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
-        });
-        $('.cat a').click(function() {
-            $('.cat .active').removeClass('active');
-            $(this).addClass('active');
-            var selector = $(this).attr('data-filter');
-            $container.isotope({
-                filter: selector,
-                animationOptions: {
-                    duration: 750,
-                    easing: 'linear',
-                    queue: false
-                }
-            });
-            return false;
-        });
 
-    });
-	
-    // Nivo Lightbox 
-    $('.portfolio-item a').nivoLightbox({
-            effect: 'slideDown',  
-            keyboardNav: true,                            
-        });
-
-}());
-
+  	//Datepicker
+  $("#datepicker").datepicker({
+  	altField: "#datepicker",
+  	autoSize: true,
+    prevText: 'Précédent',
+    nextText: 'Suivant',
+    currentText: 'Aujourd\'hui',
+    monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+    monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+    dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+    dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+    dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+    weekHeader: 'Sem.',
+    firstDay: 1 ,
+    dateFormat: 'dd M yy',
+    minDate: 0, 
+  	});
 
 }
-main();
+
+function runFormValidator()
+{
+	var formValidator;
+
+    formValidator = new FormValidator();
+   	formValidator.run();
+
+}
+
+function runBooking()
+{
+    var saveBooking;
+
+    saveBooking = new SaveBooking();
+    saveBooking.run();
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+// CODE PRINCIPAL                                                                      //
+/////////////////////////////////////////////////////////////////////////////////////////
+
+$(function()
+{
+	//Execution des effets de design js
+    main();
+
+    //Execution de la vérification des champs
+    runFormValidator();
+
+    //Execution du booking
+	runBooking();
+});

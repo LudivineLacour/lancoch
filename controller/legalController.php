@@ -3,12 +3,4 @@
 /**
 * 
 */
-class legalController
-{
-	
-	public function getRequest(){
-
-		include_once 'view/legales_notices.html';
-	}
-
-}
+include_once 'view/legales_notices.html';

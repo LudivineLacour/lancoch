@@ -65,7 +65,7 @@ hr:not(.trait_footer) {
   margin: auto; }
 
 input:focus, input:active {
-  outline: none; }
+  outline: none !important; }
 
 /*HEADER*/
 header {
@@ -99,7 +99,7 @@ header {
     filter: progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=30); }
   header a.button {
     display: block;
-    color: #ffb6c1;
+    color: #ffb6c1 !important;
     -moz-text-shadow: 0px 0px 20px #656565;
     -webkit-text-shadow: 0px 0px 20px #656565;
     -o-text-shadow: 0px 0px 20px #656565;
@@ -129,7 +129,7 @@ header {
 /*titres de nav*/
 #menu.navbar-default .navbar-nav > li > a {
   text-transform: uppercase;
-  color: #fff;
+  color: #fff !important;
   font-size: 1.3em !important;
   font-weight: 500;
   padding: 5px 0;
@@ -176,7 +176,7 @@ footer {
   footer p {
     margin: 0;
     padding: 15px 0;
-    font-size: 0.8em; }
+    font-size: 0.9em; }
 
 /*SECTIONS*/
 #auberge hr + p {
@@ -269,23 +269,28 @@ footer {
 #reservation form {
   max-width: 600px;
   margin: 30px auto; }
+  #reservation form #message p {
+    color: red; }
   #reservation form ul {
     display: inline-block; }
-    #reservation form ul:nth-child(2) {
+    #reservation form ul:nth-child(3) {
       margin-left: 1em; }
     #reservation form ul li {
-      margin: 15px 0; }
+      margin: 15px 0;
+      width: 292px; }
+      #reservation form ul li:first-child input {
+        width: 50%; }
       #reservation form ul li input {
         border: 1px solid #ff6666;
         border-radius: 30px;
         padding: 15px 6%;
-        width: 292px;
+        width: 100%;
         color: #666666; }
-      #reservation form ul li select {
+      #reservation form ul li select, #reservation form ul li #datepicker {
         border: 1px solid #ff6666;
         border-radius: 30px;
         padding: 15px 6%;
-        width: 292px;
+        width: 100%;
         color: #666666;
         cursor: pointer;
         -moz-appearance: none;
@@ -295,8 +300,10 @@ footer {
         background: url("../img/arrow") no-repeat;
         background-size: 17px;
         background-position: 91% 53%, right; }
-        #reservation form ul li select:focus {
+        #reservation form ul li select:focus, #reservation form ul li #datepicker:focus {
           outline: none; }
+      #reservation form ul li option {
+        text-align: center; }
   #reservation form .button {
     display: block;
     background-color: #ff6666;
@@ -492,7 +499,7 @@ iframe {
     overflow: hidden; }
 
   h2 {
-    font-size: 2em; }
+    font-size: 1.9em; }
 
   h2, h3, p {
     padding-left: 0;
@@ -510,11 +517,14 @@ iframe {
       display: none; }
 
   #reservation form ul {
-    display: block;
-    margin-left: auto;
-    margin-right: auto; }
-    #reservation form ul:nth-child(2) {
+    display: block; }
+    #reservation form ul:nth-child(3) {
       margin-left: 0; }
+    #reservation form ul li {
+      margin-left: auto;
+      margin-right: auto; }
+      #reservation form ul li input, #reservation form ul li select, #reservation form ul li #datepicker {
+        width: 100%; }
 
   #station {
     background: url("../img/bg_station_mobile") no-repeat; }

@@ -1,27 +1,18 @@
 <?php
+// Autoload des classes
+include_once('model/class/Autoloader.class.php');
+Autoloader::autoloading();
 
-include_once 'controller/homeController.php';
-include_once 'controller/legalController.php';
+// Récupération des infos de page
+$page = isset($_GET['page'])?$_GET['page']:null;
 
-
-if(isset($_GET['page']))
-{
-	switch ($_GET['page']) {
-		case 'legal':
-			$legal = new legalController();
-			$legal->getRequest();
-			break;
-		
-		default:
-			$home = new homeController();
-			$home->getRequest();
-			break;
-	}
-
+switch ($page) {
+	case 'legal':
+		$page = 'legal';
+		break;
+	
+	default:
+		$page = 'home';
+		break;
 }
-else
-{
-	$home = new homeController();
-	$home->getRequest();
-}
-
+include_once("controller/$page"."Controller.php");

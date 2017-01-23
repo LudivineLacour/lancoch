@@ -25,8 +25,16 @@
 
 		<!-- Stylesheet, font-awesome et chargement des API -->
 		<link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Rubik" rel="stylesheet">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="view/css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="view/css/style.css">
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="view/js/jquery.1.11.1.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  		<script type="text/javascript" src="view/js/class/Formvalidator.class.js"></script>
+  		
 	</head>
 	<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 		<header>
@@ -89,7 +97,7 @@
 							</li>
 						</ul>
 					</div>
-				<a href="#contact" class="button">Réservez votre table</a>
+				<a href="#reservation" class="button">Réservez votre table</a>
 				</div>
 			</section>
 			<section id="boutique" class="container">
@@ -126,39 +134,48 @@
 			<section id="reservation" class="container">
 				<h2>Reservez votre table !</h2>
 				<hr>
-				<form>
+				<form id="booking_form" action="" method="post">
+					<div id="message">
+						<p></p>
+					</div>
 					<ul>
-						<li><input type="text" name="nom" placeholder="Nom" required></li>
-						<li><input type="email" name="email" placeholder="Email" required></li>
-						<li><input type="text" name="telephone" placeholder="Numéro de Téléphone" title="Il nous sera utile en cas de problème ou de retard" maxlength="10" required></li>
+						<li><input type="text" name="nom" placeholder="Nom" data-name="nom" data-required><input type="text" name="prenom" placeholder="Prénom" data-name="prénom" data-required></li>
+						<li><input type="email" name="email" id="email" placeholder="Email" title="Il nous sera utile pour envoyer une confirmation de réservation" data-name="email" data-required></li>
+						<li><input type="text" name="telephone" id="telephone" placeholder="Numéro de Téléphone" title="Il nous sera utile en cas de problème ou de retard" maxlength="10" data-name="téléphone" data-required></li>
 					</ul><!-- hack inline-block
 					 --><ul>
 						<li>
-							<select>
-								<option disabled>Nombre de pers.</option>
+							<select name="couverts" data-name="couverts" data-required>
+								<option value="" selected>Nombre de couverts</option>
 								<?php for ($i = 1; $i < 9; $i++){?>
-								<option><?=$i;?> pers.</option>
+								<option value="<?=$i;?>"><?=$i;?> pers.</option>
 								<?php } ?>
-								<option>9 pers. et +</option>
+								<option value="9+">9 pers. et +</option>
 							</select>
 						</li>
 						<li>
-							<select>
-								<option disabled>Date</option>
-							</select>
+							<input type="text" name="date" id="datepicker" placeholder="Date" data-name="date" data-required>
 						</li>
 						<li>
-							<select>
-								<option disabled>Heure</option>
-								<option>12:00</option>
-								<option>12:30</option>
-								<option>13:00</option>
-								<option>13:30</option>
+							<select name="heure" data-name="heure" data-required>
+								<option value="" selected>Heure</option>
+								<option value="12:00">12:00</option>
+								<option value="12:30">12:30</option>
+								<option value="13:00">13:00</option>
+								<option value="13:30">13:30</option>
+								<option value="14:00">14:00</option>
+								<option value="" disabled>-</option>
+								<option value="19:00">19:00</option>
+								<option value="19:30">19:30</option>
+								<option value="20:00">20:00</option>
+								<option value="20:30">20:30</option>
+								<option value="21:00">21:00</option>
 							</select>
 						</li>
 					</ul>
-					<input type="submit" name="reserver" value="Réserver" class="button">
+					<input type="submit" name="reserver" value="Réserver" class="button" id="submit">
 				</form>
+				<div id="confirmation"></div>
 			</section>
 			<section>
 				<div id="station">
@@ -222,8 +239,7 @@
 			<hr class="trait_footer">
 			<p>Copyright 2016 - Auberge restaurant L’an coch’ tous droits réservés</p>
 		</footer>
-		<script type="text/javascript" src="view/js/jquery.1.11.1.js"></script>
-		<script type="text/javascript" src="view/js/SmoothScroll.js"></script>
+		<script type="text/javascript" src="view/js/class/Savebooking.class.js"></script>
 		<script type="text/javascript" src="view/js/bootstrap.js"></script> 
 		<script type="text/javascript" src="view/js/main.js"></script>
 	</body>
