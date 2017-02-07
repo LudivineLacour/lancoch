@@ -30,7 +30,6 @@ Class SaveBooking
 
 		$result = $query->fetchAll(PDO::FETCH_ASSOC);
 
-		var_dump($this->email);
 		if (count($result) == 0)
 		{
 			$requete2 = "INSERT INTO clients(nom, prenom, email, telephone) VALUES (?, ?, ?, ?)";

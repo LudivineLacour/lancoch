@@ -2,9 +2,9 @@
 body#page-top, body#mentions {
   font-size: 1.5em;
   font-family: "Rubik", sans-serif !important;
-  color: #666666;
   line-height: 2;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  color: #666666; }
 
 .container {
   max-width: 1024px;
@@ -17,7 +17,10 @@ a {
   a:hover {
     color: inherit !important; }
   a:visited {
-    color: inherit !important; }
+    color: inherit !important;
+    outline: none; }
+  a:focus {
+    outline: none; }
 
 ul {
   list-style-type: none;
@@ -48,7 +51,7 @@ h2, h3, p {
   padding-right: 2%; }
 
 section {
-  margin: 45px 0; }
+  padding: 55px 0 0; }
 
 hr:not(.trait_footer) {
   width: 90px;
@@ -61,7 +64,7 @@ hr:not(.trait_footer) {
   border: 1px solid #ffb6c1;
   padding: 10px 2%;
   border-radius: 30px;
-  width: 200px;
+  min-width: 200px;
   margin: auto; }
 
 input:focus, input:active {
@@ -69,7 +72,7 @@ input:focus, input:active {
 
 /*HEADER*/
 header {
-  background-image: url("../img/bg_site_lancoch5");
+  background-image: url("../img/bg_site_lancoch5.jpg");
   background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -87,7 +90,7 @@ header {
     */ }
   header img {
     width: 280px;
-    padding: 150px 0 0 0; }
+    padding: 150px 0 40px 0; }
   header h1 {
     color: #fff;
     font-size: 1.5em;
@@ -98,7 +101,6 @@ header {
     text-shadow: 0px 0px 20px #656565;
     filter: progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=30); }
   header a.button {
-    display: block;
     color: #ffb6c1 !important;
     -moz-text-shadow: 0px 0px 20px #656565;
     -webkit-text-shadow: 0px 0px 20px #656565;
@@ -106,7 +108,8 @@ header {
     text-shadow: 0px 0px 20px #656565;
     filter: progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=30); }
     header a.button:hover {
-      background-color: #ffb6c1;
+      background-color: rgba(255, 182, 193, 0.7);
+      border: 1px solid transparent;
       color: #fff !important; }
 
 #menu {
@@ -138,7 +141,7 @@ header {
   margin: 10px 15px 0 15px; }
 
 #menu.navbar-default .navbar-nav > li > a:hover {
-  color: #ffb6c1; }
+  color: #ffb6c1 !important; }
 
 .on {
   background-color: #262626 !important;
@@ -179,22 +182,35 @@ footer {
     font-size: 0.9em; }
 
 /*SECTIONS*/
-#auberge hr + p {
-  margin-top: 30px; }
-#auberge img {
-  margin: 30px 0; }
-#auberge #icone_tasse {
-  background: url("../img/tasse.svg") no-repeat;
-  padding-left: 350px;
-  background-position: left; }
+  #auberge hr + p {
+    margin-top: 30px; }
+  #auberge img {
+    margin: 30px 0; }
+  #auberge #bg_restaurant {
+    background: url("../img/bg_restaurant.jpg") no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    padding: 200px 0;
+    margin-top: 75px;
+    margin-bottom: 75px; }
+  #auberge #icone_tasse {
+    background: url("../img/tasse.svg") no-repeat;
+    padding-left: 350px;
+    background-position: left; 
+	margin-bottom: 75px; }
 
 #meal {
-  background: url("../img/bg_fourme") no-repeat;
+  background: url("../img/bg_fourme.png") no-repeat;
   background-size: cover;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
   background-position: top center;
+  background-attachment: fixed;
   color: #fff;
-  padding: 30px 0; }
+  padding-bottom: 55px; }
   #meal #content_meal {
     border-left: 1px solid #fff;
     border-bottom: 1px solid #fff;
@@ -260,7 +276,7 @@ footer {
     color: #fff;
     position: absolute;
     top: 95px;
-    left: 25px;
+    width: 100%;
     z-index: 1;
     text-shadow: 0 0 10px black;
     text-align: center;
@@ -297,7 +313,7 @@ footer {
         -webkit-appearance: none;
         text-indent: 0.01px;
         text-overflow: '';
-        background: url("../img/arrow") no-repeat;
+        background: url("../img/arrow.png") no-repeat;
         background-size: 17px;
         background-position: 91% 53%, right; }
         #reservation form ul li select:focus, #reservation form ul li #datepicker:focus {
@@ -309,15 +325,34 @@ footer {
     background-color: #ff6666;
     border: 0;
     color: #fff; }
+#reservation #confirmation {
+  max-width: 600px;
+  margin: 50px auto; }
+  #reservation #confirmation p {
+    font-size: 1.5em;
+    color: #fff;
+    background-color: #ff6666;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    border-radius: 30px; }
+    #reservation #confirmation p .fa {
+      font-size: 1.8em; }
+#reservation #loader img {
+  display: block;
+  margin: 100px auto;
+  width: 60px; }
 
 #station {
-  background: url("../img/bg_station_praboure") no-repeat;
+  background: url("../img/bg_station_praboure.png") no-repeat;
   background-size: cover;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   text-align: center;
   color: #fff;
-  padding: 30px 0; }
+  padding: 55px 0; }
   #station #content_station {
     border-left: 1px solid #fff;
     border-bottom: 1px solid #fff;
@@ -372,12 +407,13 @@ footer {
   margin-top: 30px; }
 
 iframe {
-  margin: 30px 0;
+  margin: 30px 0 0 0;
   width: 100%;
   border: 0; }
 
 #contact {
-  clear: both; }
+  clear: both; 
+  margin-bottom: 0;}
   #contact #adresse {
     text-align: center;
     color: #ff6666;
@@ -396,7 +432,8 @@ iframe {
     transform: rotateZ(30deg); } }
   #contact #adresse, #contact #hours {
     display: inline-block;
-    vertical-align: middle; }
+    vertical-align: middle; 
+    margin-top:45px; }
   #contact #hours {
     width: 60%; }
     #contact #hours p {
@@ -457,6 +494,8 @@ iframe {
         margin-top: 15px; }
         #meal #content_meal #column ul li p {
           text-align: center; }
+          #meal #content_meal .button {
+          padding: 10px 5%;}
 
   #boutique h3 {
     padding-top: 0 !important; }
@@ -505,11 +544,16 @@ iframe {
     padding-left: 0;
     padding-right: 0; }
 
-  #meal #content_meal {
-    margin-top: 0;
-    margin-bottom: 0; }
-  #meal #column ul li {
-    display: block; }
+  #auberge #bg_restaurant {
+    background-attachment: scroll; }
+
+  #meal {
+    background-attachment: scroll; }
+    #meal #content_meal {
+      margin-top: 0;
+      margin-bottom: 0; }
+    #meal #column ul li {
+      display: block; }
 
   #boutique ul {
     flex-direction: column; }
@@ -522,12 +566,13 @@ iframe {
       margin-left: 0; }
     #reservation form ul li {
       margin-left: auto;
-      margin-right: auto; }
+      margin-right: auto;
+      width: auto; }
       #reservation form ul li input, #reservation form ul li select, #reservation form ul li #datepicker {
         width: 100%; }
 
   #station {
-    background: url("../img/bg_station_mobile") no-repeat; }
+    background: url("../img/bg_station_mobile.png") no-repeat; }
     #station #content_station {
       margin-top: 0;
       margin-bottom: 0; }
@@ -546,5 +591,3 @@ iframe {
 
   footer nav ul {
     flex-direction: column; } }
-
-/*# sourceMappingURL=style.css.map */

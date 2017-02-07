@@ -8,19 +8,7 @@ Class Connect{
 		return $this->_pdo; 
 	}
 	// Ajout d'arguments qui sont définis par défaut si on travaille plus souvent à un endroit
-	function __construct($pass = '', $serveur = 'localhost', $dbname = 'lancoch', $user = 'root'){
-		
-		if($_SERVER['SERVER_NAME'] != 'localhost'){
-			// Test de l'adresse IP pour redéfinir des données de connexion selon le serveur sur lequel on se trouve
-			switch('REMOTE_ADDR'){
-
-				case '120.0.0.0':
-				$serveur = '';
-				//...
-				break;
-			}
-		}
-		// Si l'on souhaite travailler sur deux localhost différents avec des user et pwd différents, il faudra alors instancier un nouvel objet avec les bonnes données de connexion
+	function __construct($pass = 'Phil08012017', $serveur = 'lancochfbxphil.mysql.db', $dbname = 'lancochfbxphil', $user = 'lancochfbxphil'){
 
 		$this->_pdo = new PDO('mysql:host='.$serveur.';dbname='.$dbname.';charset=UTF8',
 						$user,

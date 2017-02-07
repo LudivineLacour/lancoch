@@ -4,19 +4,17 @@
 // FONCTIONS                                                                           //
 /////////////////////////////////////////////////////////////////////////////////////////
 function main() {
+    //Gestion du scroll
+    $('a[href^="#"]').click(function()
+    {
+      var the_id = $(this).attr("href");
 
-  	$('a.page-scroll').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top - 40
-            }, 900);
-            return false;
-          }
-        }
-      });
+      $('html, body').animate({
+        scrollTop:$(the_id).offset().top
+      }, 'slow');
+
+      return false;
+    });
 
 	
     // Show Menu on Book

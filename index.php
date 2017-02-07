@@ -7,7 +7,7 @@ Autoloader::autoloading();
 $page = isset($_GET['page'])?$_GET['page']:null;
 
 switch ($page) {
-	case 'legal':
+	case 'mentions-legales':
 		$page = 'legal';
 		break;
 	

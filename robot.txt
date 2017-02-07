@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /model/
+Disallow: /controller/
+Disallow: /legales_notices.html
